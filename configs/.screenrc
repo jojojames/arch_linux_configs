@@ -1,0 +1,35 @@
+screen -t zsh 
+#screen -t Terminal
+#screen -t AIM finch
+screen -t files ranger
+screen -t irc irssi
+screen -t music ncmpcpp 
+screen -t torrents rtorrent
+#screen -t Browser elinks
+#screen -t Mail alpine
+screen -t zsh 
+#screen -t Terminal  
+altscreen on
+bind ',' prev
+bind '.' next
+
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+##screen, with the time and date and with the current window highlighted                                                                            
+hardstatus alwayslastline
+
+startup_message off
+
+#for rtorrent, turns off screenflow(?)
+defflow off
+
+backtick 1 5 5 true
+hardstatus string "screen (%n: %t)"
+caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
+caption always
+
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+defbce on    # use current bg color for erased chars
+
+#term screen-256color
+term xterm-256color
